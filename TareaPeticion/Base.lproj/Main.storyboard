@@ -1,25 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TareaPeticion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PETICION AL SERVIDOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bJ-Y7-An3">
+                                <rect key="frame" x="78" y="28" width="219" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.3352558725" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC8-7D-MFh">
+                                <rect key="frame" x="15" y="71" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3K-Cu-79d">
+                                <rect key="frame" x="289" y="66" width="74" height="30"/>
+                                <state key="normal" title="LIMPIAR"/>
+                                <connections>
+                                    <action selector="limpiar" destination="BYZ-38-t0r" eventType="touchUpInside" id="djN-k6-fV2"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CfJ-S9-DFu">
+                                <rect key="frame" x="103" y="67" width="143" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ijC-XD-axh"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PBf-LJ-UnL">
+                                <rect key="frame" x="15" y="105" width="359" height="469"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CfJ-S9-DFu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-13" id="0Sv-gX-hzs"/>
+                            <constraint firstItem="PBf-LJ-UnL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="7" id="1Df-qJ-nT9"/>
+                            <constraint firstItem="CfJ-S9-DFu" firstAttribute="baseline" secondItem="h3K-Cu-79d" secondAttribute="baseline" id="2ub-eE-PZA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PBf-LJ-UnL" secondAttribute="bottom" constant="93" id="3Vu-Lx-jdP"/>
+                            <constraint firstItem="h3K-Cu-79d" firstAttribute="top" secondItem="3bJ-Y7-An3" secondAttribute="bottom" constant="14" id="6k4-Yx-PWT"/>
+                            <constraint firstItem="3bJ-Y7-An3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bsc-uS-LLX"/>
+                            <constraint firstItem="PBf-LJ-UnL" firstAttribute="top" secondItem="CfJ-S9-DFu" secondAttribute="bottom" constant="8" symbolic="YES" id="I29-3i-ES5"/>
+                            <constraint firstItem="lC8-7D-MFh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-143.5" id="IzY-jM-XEH"/>
+                            <constraint firstItem="CfJ-S9-DFu" firstAttribute="leading" secondItem="lC8-7D-MFh" secondAttribute="trailing" constant="30" id="MMf-0d-0ZM"/>
+                            <constraint firstItem="lC8-7D-MFh" firstAttribute="centerY" secondItem="CfJ-S9-DFu" secondAttribute="centerY" id="N1I-ut-okU"/>
+                            <constraint firstItem="h3K-Cu-79d" firstAttribute="leading" secondItem="CfJ-S9-DFu" secondAttribute="trailing" constant="43" id="NU6-6u-zUW"/>
+                            <constraint firstItem="3bJ-Y7-An3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="le4-Zp-fgq"/>
+                            <constraint firstItem="h3K-Cu-79d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="138.5" id="pYq-Z0-o1b"/>
+                            <constraint firstItem="h3K-Cu-79d" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="4" id="qBS-dh-3IJ"/>
+                            <constraint firstItem="lC8-7D-MFh" firstAttribute="leading" secondItem="PBf-LJ-UnL" secondAttribute="leading" id="vfe-dz-0CC"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="isbn" destination="CfJ-S9-DFu" id="ZTe-MG-9bI"/>
+                        <outlet property="resultado" destination="PBf-LJ-UnL" id="tpx-Ox-OoM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="97.5" y="338.5"/>
         </scene>
     </scenes>
 </document>
